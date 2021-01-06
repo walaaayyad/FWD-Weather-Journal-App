@@ -97,6 +97,6 @@ const generateData = ()=> {
 /****************************** 
 *****   EVENT LISTENER   *****
 *******************************/
-// Add Event Listener for Generate Button to Retrieve Data 
+// Add Event Listener to 'Generate Button' to Retrieve Data 
 generateBtn.addEventListener('click', generateData);
    
