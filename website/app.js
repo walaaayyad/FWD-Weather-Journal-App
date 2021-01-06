@@ -20,7 +20,7 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 *******************************/
 //1- Function to GET Web API Data
 const getWeather = async (zipCode)=> {
-    const request =  await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zipCode}${apiKey}`)
+    const request =  await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zipCode}${apiKey}&units=metric`)
         try {
             const data = await request.json()
             return data;
@@ -83,7 +83,7 @@ const generateData = ()=> {
         }else {
             // Post data to the server
             postData('/postData', {
-                temp: data.main.temp,
+                temp: data.main.temp+'  C',
                 date: d.toLocaleDateString(),
                 content: feelings.value
             }).then(
